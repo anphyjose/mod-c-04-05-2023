@@ -1,0 +1,50 @@
+
+<form [formGroup]="personalDetails" >
+             
+  
+    <input type="text" class="form-control" formControlName="firstname" placeholder="firstname" />
+        <span class="text-danger"
+          *ngIf="personalDetails.controls['firstname'].touched && personalDetails.hasError('required','firstname')">
+          *firstname is required
+        </span><br>
+        <input type="text" class="form-control" formControlName="lastname" placeholder="lastname" />
+        <span class="text-danger"
+          *ngIf="personalDetails.controls['lastname'].touched && personalDetails.hasError('required','lastname')">
+          *lastname is required
+        </span><br>
+        <input type="text" class="form-control" formControlName="userName" placeholder="User Name" />
+            <span class="text-danger"
+              *ngIf="personalDetails.controls['userName'].touched && personalDetails.hasError('required','userName')">
+              *User name is required
+            </span><br>
+            <input type="text" class="form-control" formControlName="phoneNo" placeholder="Phone" />
+            <span class="text-danger"
+              *ngIf="personalDetails.controls['phoneNo'].touched && personalDetails.hasError('required','phoneNo')">
+              *phone number is required
+            </span>
+            <br>
+            <input type="text" class="form-control" formControlName="emailAddress" placeholder="emailAddress" />
+            <span class="text-danger"
+              *ngIf="personalDetails.controls['emailAddress'].touched && personalDetails.hasError('required','emailAddress')">
+              *emailid is required
+            </span><br>
+            <input type="text" class="form-control" formControlName= "role" placeholder="role" />
+            <span class="text-danger"
+              *ngIf="personalDetails.controls['role'].touched && personalDetails.hasError('required','role')">
+              * role is required
+            </span><br>
+            <!-- <input type="text" class="form-control" formControlName="createddate"  placeholder="createddate" />
+       <span class="text-danger"
+         *ngIf="personalDetails.controls['createddate'].touched && personalDetails.hasError('required','createddate')">
+         *date is required
+       </span>
+     
+      
+       <br>
+       <input type="text" class="form-control" formControlName="updatedate"  placeholder="updatedate" />
+       <span class="text-danger"
+         *ngIf="personalDetails.controls['updatedate'].touched && personalDetails.hasError('required','updatedate')">
+         *date is required
+       </span> -->
+      <button   (click)="update()" type="button" class="btn btn-primary btn-block mb-4">update</button> 
+  </form>

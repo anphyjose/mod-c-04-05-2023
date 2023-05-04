@@ -1,0 +1,85 @@
+<section class="vh-100" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div class="card rounded-3 text-black p-md-5" >
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        
+          <!-- <div class="row g-0"> -->
+        <div class="col-md-6 col-lg-7 col-xl-6"  >
+          
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+            class="img-fluid" style="background-color: #cdd3d1;"alt="Phone image">
+        </div>
+        <div class="col-md-6 col-lg-5 col-xl-5 offset-xl-1">
+          <!-- <div class="card rounded-3 text-black"> -->
+            <!-- <div class="card-body p-md-5 mx-md-4"> -->
+              <h2 class="fs-title" style="text-align: center;">MOD-c Management</h2>
+              <h6 style="text-align: center;">"Happy Customers,amazing business"</h6>
+              <!-- <form [formGroup]="personalDetails" id="msform">
+                
+               
+                   
+                    <input type="text" formControlName="email" name="email" placeholder="Email"/>
+                    <span class="text-danger"
+                    *ngIf="personalDetails.controls['email'].touched && personalDetails.hasError('required','email')">
+                    *Email id is required
+                  </span>
+                    <input type="password" formControlName="password" name="phone" placeholder="password"/>
+                    <span class="text-danger"
+                    *ngIf="personalDetails.controls['password'].touched && personalDetails.hasError('required','password')">
+                    *Password is required
+                  </span>
+                 
+                    <input (click)="submit()"type="submit" name="submit" class="submit action-button" value="Login" />
+                    <input type="submit"  (click)="signup()"name="submit" class="submit action-button" value="signup" />
+                   
+            </form> -->
+            <form [formGroup]="personalDetails">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="text" formControlName="username"  placeholder="username"  class="form-control"/>
+                <!-- <label class="form-label" for="form2Example1">Email address</label> -->
+              </div>
+            
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form2Example2" class="form-control" formControlName="password"  placeholder="password"/>
+                <!-- <label class="form-label" for="form2Example2">Password</label> -->
+              </div>
+            
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                  </div>
+                </div>
+            
+                <div class="col">
+                  <!-- Simple link -->
+                  <!-- <a href="#!">Forgot password?</a> -->
+                </div>
+              </div>
+            
+              <!-- Submit button -->
+              <!-- <button  routerLink="/private/profile"type="button" class="btn btn-primary btn-block mb-4">Login</button> -->
+              <button   (click)="login()" type="button" class="btn btn-primary btn-block mb-4">Login</button>
+            
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>Not a member? <a routerLink="/signup" >Register</a></p>
+          
+                <div class="d-flex justify-content-center">
+                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+              </div>
+            </form>
+          </div>
+       
+      </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,72 @@
+
+.form-select {
+    background-color: #98defed4;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+  color: #eeeeee;
+    cursor: pointer;   
+    font-family: sans-serif;
+    font-size: 16px;
+    
+    text-align: left;
+    animation: glowing 1300ms infinite;
+  
+  }
+  @keyframes glowing {
+    0% {
+      background-color: rgb(101, 138, 250);
+      box-shadow: 0 0 5px #74797b;
+    }
+    50% {
+      background-color: rgb(101, 138, 250);
+      box-shadow: 0 0 20px #74797b;
+    }
+    100% {
+      background-color:rgb(101, 138, 250);
+      box-shadow: 0 0 5px #74797b;
+    }
+  }
+  ul li {
+    display: inline ;
+    padding: 5px;
+  }
+
+
+  
+  /*.........................modal styles........................*/
+  .modal {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    cursor: pointer;
+    padding-top: 100px;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-transition: 0.5s;
+    overflow: auto;
+    transition: all 0.3s linear;
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+    width: 800px;
+    height: 600px;
+  }
+ 
+  
+
+  .Close {
+    color: #fafafa;
+    float: right;
+    font-size: 16px;
+  }
+  .Close:hover, .Close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

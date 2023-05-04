@@ -1,0 +1,254 @@
+.container{
+    width: 600px;
+   
+    
+    
+}
+
+.form-control{
+    border-radius: 15px;
+}
+.form-control:hover{
+    background-color: rgb(211, 208, 208);
+}
+
+.forgot{
+    text-decoration: none;
+    color: rgb(218, 156, 156);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.loggs{
+    text-decoration: none;
+    color: rgb(180, 171, 215);
+    margin-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+.card{
+    background-image: linear-gradient(rgb(3, 177, 212),rgb(181, 111, 243));
+    
+}
+
+.form-group{
+    margin-top: 10px;
+}
+
+.btn{
+   
+    margin-top: 10px;
+
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(252, 32, 32);
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+
+
+    
+    
+ 
+
+.sqr{
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 40px;
+    border-radius: 35px; /*1*/
+border: 5px solid white; /*2*/
+background: linear-gradient(45deg,#ffffff,#f3f4f7) border-box; 
+border-width: 4px;
+   
+    border-image: linear-gradient(white) 1;
+    height: 400px;
+} 
+label{
+    color: rgb(26, 56, 205);
+}
+.sqr:hover{
+  
+    transform: scale(1.01); 
+}
+
+.head{
+    color: rgb(1, 9, 1);
+    font-family: sans-serif;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .wid1 {  
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 2s ease-out 0s 1 slideInFromLeft;
+    
+   
+  }
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateY(200%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .wid2 {  
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 2s ease-out 0s 1 slideInFromRight;
+    
+   
+  }
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .wid3{  
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 2s ease-out 0s 1 slideInFromBottom;
+    
+   
+  }
+
+
+/*mod-c blinking heading..................................*/
+
+ 
+#ul1
+{
+display: flex;
+list-style: none;
+margin-left: 25%;
+}
+#ul1 .liclass{
+  font-size: 40px;
+  color: #7f7f7f;
+  font-weight: bold; 
+  animation: neonTxt 2s ease-in-out infinite  ;
+}
+#ul1 .liclass:nth-child(2){ animation-delay: 1s;}
+#ul1 .liclass:nth-child(3){ animation-delay: 2s;}
+#ul1 .liclass:nth-child(4){ animation-delay: 3s;}
+#ul1 .liclass:nth-child(5){ animation-delay: 4s;}
+#ul1 .liclass:nth-child(6){ animation-delay: 5s;}
+
+@keyframes neonTxt {
+  0%, 5%{
+    color: #9DE2F2;
+    text-shadow: 0 0 8px #9a9a9a;
+  }
+  20%, 100%{
+    color: #769393;
+  }
+  30%, 100%{
+    text-shadow: none;
+  }
+  
+}
+
+  /*icon*/
+  form i.bi {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: blue;
+    font-size: 22px;
+    z-index: 9999;
+}
+
+.form-control {
+    position: relative;
+   padding-left: 45px !important;
+
+}

@@ -1,0 +1,81 @@
+<div class=" container-fluid"  >
+  <div class="row">
+    <div class="col-3 col-lg-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-9 col-lg-10" >
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase mb-0 text-primary">Active Users List <i  class="bi bi-plus float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+          </h5>
+         
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="table-responsive">
+          <table class="table table table-hover " >
+            <thead class="table-primary">
+              <tr>
+                <th scope="col" class="border-0 text-uppercase font-medium">USERNAME</th>
+                <th scope="col" class="border-0 text-uppercase font-medium">Emailaddress</th>
+                <th scope="col" class="border-0 text-uppercase font-medium">Role</th>
+                <th scope="col" class="border-0 text-uppercase font-medium">CompanyName</th>
+                <th scope="col" class="border-0 text-uppercase font-medium">
+                  <span class="bi bi-trash"></span>/<i class="bi bi-view-list"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor=" let users of userList | paginate:{itemsPerPage:tableSize,currentPage:page,totalItems:count}; let i=index" >
+                <ng-container *ngIf="users.role=='user' ">
+                  
+                  <td>{{users.userName}}</td>
+                  <td>{{users.emailAddress}}</td>
+                  <td>{{users.role}}</td>
+                  <td>{{users.companyName}}</td>
+                  <td><i class="bi bi-view-list" routerLink="/profile/{{users.id}}" ></i></td>
+                </ng-container>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form [formGroup]="personalDetails" >
+              <input type="text" class="form-control" formControlName="firstName" placeholder="firstName" />
+                  <span class="text-danger" *ngIf="personalDetails.controls['firstName'].touched && personalDetails.hasError('required','firstName')">
+                  *firstName name is required</span><br>
+              <input type="text" class="form-control" formControlName="lastName" placeholder="lastName" />
+                <span class="text-danger" *ngIf="personalDetails.controls['lastName'].touched && personalDetails.hasError('required','lastName')">
+                                    *last name is required</span><br>
+              <input type="text" class="form-control" formControlName="userName" placeholder="User Name" />
+                <span class="text-danger"*ngIf="personalDetails.controls['userName'].touched && personalDetails.hasError('required','userName')">
+                                    *User name is required</span><br>
+              <input type="text" class="form-control" formControlName="emailAddress" placeholder="emailAddress" />
+                <span class="text-danger" *ngIf="personalDetails.controls['emailAddress'].touched && personalDetails.hasError('required','emailAddress')">
+                                    *emailid is required</span><br>
+              <input type="text" class="form-control" formControlName="phoneNo" placeholder="Phone" />
+                <span class="text-danger" *ngIf="personalDetails.controls['phoneNo'].touched && personalDetails.hasError('required','phoneNo')">
+                                    *phone number is required </span><br>
+              <input type="text" class="form-control" formControlName="password" placeholder="password" />
+                <span class="text-danger" *ngIf="personalDetails.controls['password'].touched && personalDetails.hasError('required','password')">
+                                    *password is required</span><br>
+                <select class="custom-select mb-3" (change)=" changeRole($event)" formControlName="role">
+                  <option value="">Choose role</option>
+                  <option *ngFor="let roles of roleList" [ngValue]="roles.id">{{roles.name }}</option>
+                </select>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"  (click)="register()"><a  routerLink="../active"></a>Save changes</button>
+            </div>
+          </div>
+        </div>
+<!-- end of modal -->
+        
+      </div>
+      <div>
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange) ="onTableDataChange($event)"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

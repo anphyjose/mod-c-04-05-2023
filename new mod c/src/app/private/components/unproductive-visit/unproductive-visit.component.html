@@ -1,0 +1,64 @@
+
+<span class="h6 text-uppercase" >Unproductive Visit</span>
+<div style="width: 30%; float: right;">
+    <select  class="form-select"  name="Ppub" #selectid value="" (change)="setFiltervalue($event)"  >
+    <option *ngFor="let entity of entities; let i = index"
+    value="{{entity.name}}" [selected]="i == 3 ? true : null" 
+    (onload)="fooFunction(i, entity.name)"> {{entity.name}}</option>
+    <!-- <option value="" >TODAY</option>
+    <option value="" >YESTERDAY</option>
+    <option value="" >WTD</option>
+    <option value=""  >MTD</option>
+    <option value="" >CUSTOM</option> -->
+  </select></div>
+
+
+  <div  *ngIf="filterValue === 'CUSTOM'" >
+    <!-- <div class="row mt-2"> -->
+      <div class="row" style="display: flex;">
+      <div  class="col-md-9  pt-4 ">
+    
+        <input type="date" id="startDate"name="startDate" (change)="setStartDate($event)" class="shadow card" required style="border-radius: 5px; "/>
+     </div>
+    
+     <div  class="col-md-3  pt-4">
+        <input type="date" id="end-date" name="endDate" (change)="setEndDate($event)" required class="shadow card" style="border-radius: 5px; " />
+      </div>
+    </div>
+  
+  
+  
+    <div class="row pt-2 ">
+   
+      <div class="col-md-12 ">
+        <button type="button" class="btn btn-secondary btn-sm  float-right " (click)="logDates()">Apply</button>
+      </div>
+      <hr style="height: 2px; background-color: rgb(51, 51, 58); border-radius: 5px; width: 95%;" >
+    
+    </div>
+  
+  
+    
+  </div>
+
+
+<canvas #canvas id="myChart4"   (click) = "show()"  ></canvas>
+
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal " id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title h4 " id="myModalLabel"><u>Unproductive Visit</u></h4>
+      </div>
+      <div class="modal-body"  id="imagepreview" style="width:100%; height: 100%;">
+        <canvas #canvas id="myChart9"  ></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger Close" data-dismiss="modal" (click) = "hide()"><b>Close</b></button>
+      </div>
+    </div>
+  </div>
+  </div>
+  

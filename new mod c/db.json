@@ -1,0 +1,120 @@
+{
+  "signup": [
+    {
+      "username": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "password": "",
+      "phone": "",
+      "address": "",
+      "organizationAddress": "",
+      "organizationName": "",
+      "organizationEmail": "",
+      "organizationPhone": "",
+      "id": 1
+    },
+    {
+      "username": "ather",
+      "firstname": "qwe",
+      "lastname": "ert",
+      "email": "public@gmail.com",
+      "password": "123",
+      "phone": "34657",
+      "address": "fhj",
+      "organizationAddress": "uio",
+      "organizationName": "ghjk",
+      "organizationEmail": "tyu",
+      "organizationPhone": "bnm",
+      "id": 2
+    },
+    {
+      "username": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "password": "",
+      "phone": "",
+      "address": "",
+      "organizationAddress": "",
+      "organizationName": "",
+      "organizationEmail": "",
+      "organizationPhone": "",
+      "id": 3
+    },
+    {
+      "username": "sd",
+      "firstname": "hjhj",
+      "lastname": "jkjkk",
+      "email": "public@gmail.com",
+      "password": "123",
+      "phone": "677",
+      "address": "njk",
+      "organizationAddress": "bbj",
+      "organizationName": "jhhjk",
+      "organizationEmail": "tfh",
+      "organizationPhone": "778",
+      "id": 4
+    },
+    {
+      "username": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "password": "",
+      "phone": "",
+      "address": "",
+      "organizationAddress": "",
+      "organizationName": "",
+      "organizationEmail": "",
+      "organizationPhone": "",
+      "id": 5
+    },
+    {
+      "username": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "password": "",
+      "phone": "",
+      "address": "",
+      "organizationAddress": "",
+      "organizationName": "",
+      "organizationEmail": "",
+      "organizationPhone": "",
+      "id": 6
+    }
+  ],
+  "adduser": [
+    {
+      "firstname": "yadhu",
+      "lastname": "krishna",
+      "userName": "yadhu",
+      "emailAddress": "",
+      "phoneNo": "1234567889",
+      "role": "developer",
+      "id": 3
+    },
+    {
+      "firstname": "Soudha",
+      "lastname": "AM",
+      "userName": "soudha",
+      "emailAddress": "soudha@gmail.com",
+      "phoneNo": "1234567890",
+      "role": "developer",
+      "id": 4
+    },
+    {
+      "firstname": "Anphy",
+      "lastname": "sanil",
+      "userName": "anphy",
+      "emailAddress": "anphy@gmail.com",
+      "phoneNo": "12345678",
+      "role": "developer",
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

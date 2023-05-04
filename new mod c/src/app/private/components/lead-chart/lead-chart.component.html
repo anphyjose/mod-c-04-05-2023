@@ -1,0 +1,20 @@
+<p>lead-chart works!</p>
+<!-- <canvas id="myChart">
+    
+</canvas> -->
+<!-- <div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div> -->
+
+<h5 class="h5"><u><b>Lead  Chart</b></u></h5>
+<select class="form-select"  name="Ppub" #selectid value="" (change)="viewDay($event)"  >
+    <option *ngFor="let entity of entities; let i = index"
+    value="{{entity.name}}" [selected]="i == 3 ? true : null" 
+    (onload)="fooFunction(i, entity.name)"> {{entity.name}}</option>
+    <!-- <option value="" >TODAY</option>
+    <option value="" >YESTERDAY</option>
+    <option value="" >WTD</option>
+    <option value=""  >MTD</option>
+    <option value="" >CUSTOM</option> -->
+  </select>
+<canvas #canvas id="myChart1" baseChart  ></canvas>

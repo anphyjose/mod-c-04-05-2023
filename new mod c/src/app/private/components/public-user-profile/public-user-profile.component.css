@@ -1,0 +1,64 @@
+body{background-color:#FFEBEE}
+.card{width:400px;border: none;border-radius: 14px !important}
+.area1{background-color: #b5b2f1;border-top-left-radius: 14px !important;border-top-right-radius: 14px !important;padding-top: 83px !important}
+.image{top: -62px;position: relative}.image img{box-shadow: 5px 6px 6px 2px #e9ecef}.area2{background-color:#fff;border-bottom-left-radius: 14px !important;border-bottom-right-radius: 14px !important}
+.name{font-size:25px;font-weight:650}.information{color:#9FA8DA;font-weight:500;font-size:16px}
+.list-icons{display: inline-flex;color:#C5CAE9}.list-icons li{list-style: none;padding: 12px;border-radius: 10px;width: 49px;margin-right: 10px}
+.list-icons li i{font-size: 17px;color: #fff}@media (max-width:700px){.list-icons{display: block}}.facebook{background: #3b5998}.instagram{background: #3f729b}.youtube{background: #ff0000}.whatsapp{background: #4dc247}.pinterest{background: #cb2027}
+body {
+    font-family: sans-serif;
+  }
+  
+  .profilepic {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #111;
+  }
+  
+  .profilepic:hover .profilepic__content {
+    opacity: 1;
+  }
+  
+  .profilepic:hover .profilepic__image {
+    opacity: .5;
+  }
+  
+  .profilepic__image {
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+  }
+  
+  .profilepic__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+  
+  .profilepic__icon {
+    color: white;
+    padding-bottom: 8px;
+  }
+  
+  .fas {
+    font-size: 20px;
+  }
+  
+  .profilepic__text {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 50%;
+    text-align: center;
+  }

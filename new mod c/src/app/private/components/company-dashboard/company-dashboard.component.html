@@ -1,0 +1,327 @@
+<!-- <button type="button" (click) = "showText()" class="btn btn-primary" style="margin-left: 180px;"><i class="bi bi-menu-down"></i></button> 
+  <button type="button" (click) = "hideText()" class="btn btn-danger" style="margin-left: 10px;position: absolute; ">
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </button> -->
+
+
+<div class=" container-fluid">
+
+  <div class="row">
+
+    <div class="col-3 col-lg-2" *ngIf="textShow" style="position: relative;">
+      <app-navbar></app-navbar>
+    </div>
+
+    <div class="col-9 col-lg-10">
+      <main id="main" class="main">
+        <div class="pagetitle">
+          <span class="h2">Dashboard</span>
+          <div class="dropdown" style="float: right;"></div>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+              <!-- <li class=" dropdown pull-right">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li>Option 1</li>
+                          <li>Option 2</li>
+                          <li>Option 3</li>
+                        </ul>
+                      </li> -->
+              <!-- <div class="dropdown" style="margin-left: 750px;position: absolute;margin-top:-5px;" >
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Employee Name
+                        </button>
+                        <ul class="dropdown-menu  ">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div> -->
+              <div style="width: 30%; float: right;margin-left: 700px;position: absolute;margin-top:-5px;"><select
+                  class="form-select" name="Ppub" #selectid value="" (change)="setEmployee($event)">
+                  <option value="" selected>All Employee</option>
+                  <option *ngFor="let entity of employeeName; let i = index" value="{{entity.userPid}}"
+                    (onload)="fooFunction(i, entity.userName)"> {{entity.userName}}
+                  </option>
+
+                </select>
+              </div>
+            </ol>
+
+          </nav>
+
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+          <div class="row">
+            <!-- Left side columns -->
+            <div class="col-md-12">
+              <div class="row cardrow" id="card">
+                <!-- Sales Card -->
+                <div class="col-xxl-3 col-md-3 cardcol ">
+                  <div class="card info-card sales-card  shadow card-hover"
+                    style="background-color: rgb(242, 222, 254);">
+                    <div class="filter">
+                      <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a> -->
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title h5">Sales<span>| Today</span></h5>
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-cart"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 class="h6 ">{{dealVolume.wonVolume}}</h6>
+                          <!-- <span class="text-success small pt-1 fw-bold h6">12%</span> 
+                              <span class="text-muted small pt-2 ps-1 h6">increase</span>         -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- End Sales Card -->
+
+                <!-- Revenue Card -->
+                <div class="col-xxl-3 col-md-3 cardcol">
+                  <div class="card info-card revenue-card  shadow card-hover"
+                    style="background-color: rgb(223, 249, 240);">
+                    <div class="filter">
+                      <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a> -->
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title h5">Revenue <span>| This Month</span></h5>
+                      <div class="d-flex align-items-center">
+                        <div
+                          class="card-icon rounded-circle d-flex align-items-center justify-content-center card-hover">
+                          <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 class="h6">$3,264</h6>
+                          <!-- <span class="text-success small pt-1 fw-bold h6">8%</span> 
+                              <span class="text-muted small pt-2 ps-1 h6">increase</span>         -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- End Revenue Card -->
+
+                <!-- Customers Card -->
+                <div class="col-xxl-3 col-xl-3 cardcol">
+                  <div class="card info-card customers-card  shadow card-hover"
+                    style="background-color: rgb(245, 238, 229);">
+                    <div class="filter">
+                      <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a> -->
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title h5">Customers <span>| This Month</span></h5>
+                      <div class="d-flex align-items-center">
+                        <div
+                          class="card-icon rounded-circle d-flex align-items-center justify-content-center card-hover">
+                          <i class="bi bi-people"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 class="h6">{{leads.totalLeads}}</h6>
+                          <!-- <span class="text-danger small pt-1 fw-bold h6">12%</span> 
+                              <span class="text-muted small pt-2 ps-1 h6">decrease</span>         -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Customers Card -->
+                <!-- overall Card -->
+                <div class="col-xxl-3 col-xl-3 cardcol">
+                  <div class="card info-card overall-card  shadow card-hover"
+                    style="background-color: rgb(251, 253, 214);">
+                    <div class="filter">
+                      <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a> -->
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title h5">Overall <span>| This Year</span></h5>
+                      <div class="d-flex align-items-center">
+                        <div
+                          class="card-icon rounded-circle d-flex align-items-center justify-content-center card-hover">
+                          <i class="bi bi-percent"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6 class="h6">93%</h6>
+                          <!-- <span class="text-danger small pt-1 fw-bold h6">12%</span> 
+                        <span class="text-muted small pt-2 ps-1 h6">increase</span>   -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Customers Card -->
+              </div> <!--end row.............................-->
+
+              <br>
+
+
+
+
+              <!--****************************************************************************************************************
+    *************************************************CHART*******************************************************-->
+              <div class="row">
+                <nav>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Reports</li>
+                    <!-- <li class="breadcrumb-item active">Today</li> -->
+                  </ol>
+                </nav>
+              </div>
+
+
+              <!-- Reports -->
+              <div class="row myclass">
+                <div class="col-xxl-4 col-md-4" style="max-width:33%;cursor:pointer" class="modal-hover-opacity"
+                  data-toggle="modal" data-target="#myModal">
+                  <div class="card  shadow ">
+                    <div class="card-body">
+                      <!-- <a routerLink="/detailed-chart/"> --><a>
+                        <div id="reportsChart"> <app-lead #childComponent></app-lead></div>
+                      </a>
+                    </div>
+                  </div>
+                </div><!--.............end 1-->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                      </div>
+                      <div class="modal-body" style="max-width:100%; cursor:pointer" class="modal-hover-opacity">
+                        {{imgSrc}}
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-md-4 ">
+                  <div class="card  shadow ">
+
+                    <div class="card-body">
+
+                      <div id="reportsChart"> <app-lead-volume></app-lead-volume></div>
+                    </div>
+                  </div>
+                </div><!--.............end 1-->
+                <div class="col-xxl-4 col-md-4 ">
+                  <div class="card  shadow ">
+                    <!--  <div class="filter">
+                          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <li class="dropdown-header text-start">
+                              <h6>Filter</h6>
+                            </li>        
+                            <li><a class="dropdown-item" href="#">Today</a></li>
+                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                            <li><a class="dropdown-item" href="#">This Year</a></li> 
+                          </ul>
+                        </div> -->
+                    <div class="card-body">
+
+                      <div id="reportsChart"> <app-influence-visit #childComponent2></app-influence-visit></div>
+                    </div>
+                  </div>
+                </div><!--.............end 1-->
+              </div>
+
+
+
+              <br>
+
+
+              <div class="row myclass">
+                <div class="col-xxl-4 col-md-4 ">
+
+                  <div class="card  shadow">
+                    <div class="card-body">
+
+                      <div id="reportsChart"> <app-unproductive-visit #childComponent1></app-unproductive-visit></div>
+                    </div>
+                  </div>
+                </div><!--.............end 1-->
+
+
+
+
+
+                <div class="col-xxl-4 col-md-4">
+                  <!-- <div class="card  shadow">
+                    <div class="card-body">
+
+                      <div id="reportsChart">  <app-lost-piechart1></app-lost-piechart1></div>
+                    </div>
+                  </div> -->
+                 
+                </div>
+                <div class="col-xxl-4 col-md-4">
+                  <img src ="assets/images/Basic-Income.gif">
+                  <!-- <div class="card  shadow">
+                    <div class="card-body">
+
+                      <div id="reportsChart"> <app-pie-chart2></app-pie-chart2></div>
+                    </div>
+                  </div> -->
+                 
+                </div>
+              
+              </div>
+
+
+            </div><!--end coloumn....................-->
+
+
+
+          </div><!--end row......................-->
+
+
+        </section>
+        <div></div>
+      </main>
+    </div>
+
+
+
+
+  </div>
+</div>

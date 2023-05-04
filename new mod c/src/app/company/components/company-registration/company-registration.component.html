@@ -1,0 +1,273 @@
+<section class=" gradient-custom">
+    <div class="container py-5 ">
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+
+                        <form [formGroup]="personalDetails">
+
+
+
+                            <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+
+                                <ng-wizard-step [canEnter]="isValidTypeBoolean"
+                                    [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                                   <h3 style="text-align: center;"><i class="bi bi-person-check " ></i></h3>
+
+
+                                    <input type="text" class="form-control" formControlName="userName"
+                                        placeholder="User Name" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['userName'].touched && personalDetails.hasError('required','userName')">
+                                        *User name is required
+                                    </span><br>
+
+                                    <input type="text" class="form-control" formControlName="emailAddress" name="emailAddress"
+                                        placeholder="emailAddress" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['emailAddress'].touched && personalDetails.hasError('required','emailAddress')">
+                                        *Email id is required
+                                    </span>
+                                   
+                                    <!-- <small class="text-danger" *ngif="personalDetails.get('emailAddress').errors?.email">Email address is invalid</small> -->
+<br>
+                                    <input type="text" class="form-control" formControlName="password" name="phone"
+                                        placeholder="password" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['password'].touched && personalDetails.hasError('required','password')">
+                                        *password is required
+                                    </span>
+                                    <br>
+
+                                </ng-wizard-step>
+
+                                <ng-wizard-step>
+                                    <h3 style="text-align: center;"><i class="bi bi-person"></i> Personal Details</h3>
+                                    <input type="text" class="form-control" formControlName="firstName"
+                                        placeholder="firstname" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['firstName'].touched && personalDetails.hasError('required','firstName')">
+                                        *First name is required
+                                    </span><br>
+
+                                    <input type="text" class="form-control" formControlName="lastName" name="email"
+                                        placeholder="lastName" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['lastName'].touched && personalDetails.hasError('required','lastName')">
+                                        *Last name is required
+                                    </span><br>
+
+                                    <input type="text" class="form-control" formControlName="phoneNo" name="phoneNo"
+                                        placeholder="phoneNo" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['phoneNo'].touched && personalDetails.hasError('required','phoneNo')">
+                                        *phoneNo is required
+                                    </span>
+                                    <br>
+                                  
+
+                                </ng-wizard-step>
+                               
+
+                                <ng-wizard-step>
+
+                                    <h3 style="text-align: center;"><i class="bi bi-building"></i>Company Details</h3>
+                              
+                                    <input type="text" class="form-control" formControlName="companyName"
+                                        name="organizationAddress" placeholder="companyName" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['companyName'].touched && personalDetails.hasError('required','companyName')">
+                                        *companyName is required
+                                    </span><br>
+
+                                    <input type="text" class="form-control" formControlName="companyAddress"
+                                        name="organizationAddress" placeholder="companyAddress" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['companyAddress'].touched && personalDetails.hasError('required','organizationAddress')">
+                                        *companyAddress is required
+                                    </span><br>
+
+                  
+                                    <input type="text" class="form-control" formControlName="companyEmailAddress"
+                                        name="companyEmailAddress" placeholder="emailAddress" />
+                                    <span class="text-danger"
+                                        *ngIf="personalDetails.controls['companyEmailAddress'].touched && personalDetails.hasError('required','companyEmailAddress')">
+                                        *companyEmailAddress is required
+                                    </span><br>
+
+
+
+
+                                </ng-wizard-step>
+
+
+                            </ng-wizard>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <body>
+
+    <div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+    </div>
+ 
+
+<section class="  vh-100">
+    <div class="container-fluid h-custom">
+
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
+
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://preview.colorlib.com/theme/bootstrap/login-form-07/images/undraw_remotely_2j6y.svg"
+                  class="img-fluid" alt="Sample image">
+              </div>
+
+
+              <div class=" sqr col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="text-center">
+                    
+                </div>
+                <div class="text-center">
+                    <h4 class="head">Welcome To MOD-C-Management</h4>
+                </div>
+                <p style="color: rgb(0, 83, 97); text-align: center; font-family:sans-serif;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
+                    details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              
+                <form [formGroup]="personalDetails">
+
+
+
+                    <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+
+                        <ng-wizard-step [canEnter]="isValidTypeBoolean"
+                            [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                           <h3 style="text-align: center;"><i class="bi bi-person-check " ></i></h3>
+
+
+                            <input type="text" class="form-control" formControlName="userName"
+                                placeholder="User Name" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['userName'].touched && personalDetails.hasError('required','userName')">
+                                *User name is required
+                            </span><br>
+
+                            <input type="text" class="form-control" formControlName="emailAddress" name="emailAddress"
+                                placeholder="emailAddress" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['emailAddress'].touched && personalDetails.hasError('required','emailAddress')">
+                                *Email id is required
+                            </span>
+                           
+                            <small class="text-danger" *ngif="personalDetails.get('emailAddress').errors?.email">Email address is invalid</small>
+<br>
+                            <input type="text" class="form-control" formControlName="password" name="phone"
+                                placeholder="password" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['password'].touched && personalDetails.hasError('required','password')">
+                                *password is required
+                            </span>
+                            <br>
+
+                        </ng-wizard-step>
+
+                        <ng-wizard-step>
+                            <h3 style="text-align: center;"><i class="bi bi-person"></i> Personal Details</h3>
+                            <input type="text" class="form-control" formControlName="firstName"
+                                placeholder="firstname" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['firstName'].touched && personalDetails.hasError('required','firstName')">
+                                *First name is required
+                            </span><br>
+
+                            <input type="text" class="form-control" formControlName="lastName" name="email"
+                                placeholder="lastName" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['lastName'].touched && personalDetails.hasError('required','lastName')">
+                                *Last name is required
+                            </span><br>
+
+                            <input type="text" class="form-control" formControlName="phoneNo" name="phoneNo"
+                                placeholder="phoneNo" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['phoneNo'].touched && personalDetails.hasError('required','phoneNo')">
+                                *phoneNo is required
+                            </span>
+                            <br>
+                          
+
+                        </ng-wizard-step>
+                       
+
+                        <ng-wizard-step>
+
+                            <h3 style="text-align: center;"><i class="bi bi-building"></i>Company Details</h3>
+                      
+                            <input type="text" class="form-control" formControlName="companyName"
+                                name="organizationAddress" placeholder="companyName" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['companyName'].touched && personalDetails.hasError('required','companyName')">
+                                *companyName is required
+                            </span><br>
+
+                            <input type="text" class="form-control" formControlName="companyAddress"
+                                name="organizationAddress" placeholder="companyAddress" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['companyAddress'].touched && personalDetails.hasError('required','organizationAddress')">
+                                *companyAddress is required
+                            </span><br>
+
+          
+                            <input type="text" class="form-control" formControlName="companyEmailAddress"
+                                name="companyEmailAddress" placeholder="emailAddress" />
+                            <span class="text-danger"
+                                *ngIf="personalDetails.controls['companyEmailAddress'].touched && personalDetails.hasError('required','companyEmailAddress')">
+                                *companyEmailAddress is required
+                            </span><br>
+
+
+
+
+                        </ng-wizard-step>
+
+
+                    </ng-wizard>
+                </form>
+                <div class="card-footer text-right">
+                    <small><a class="forgot" routerLink="../forgotpassword">Forgot Password</a></small>
+                    <small><a class="userlog" routerLink="../userlogin">UserLogin</a></small>
+                  </div>
+
+
+
+
+             </div>
+
+
+
+             
+             
+            
+            </div>
+
+
+
+      </div>
+
+
+</section>
+</body> -->
+
+
+
+

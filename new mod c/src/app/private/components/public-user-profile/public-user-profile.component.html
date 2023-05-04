@@ -1,0 +1,216 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style="background:#1B4F6C">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" href="">
+        MOD-C-Management
+      </a>
+  
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+        </ul>
+        <!-- Left links -->
+  
+        <div class="d-flex align-items-center">
+  <!-- change password button -->
+          <!-- <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            change Password
+          </button> -->
+  
+          <div class="dropdown" style="margin-left:50%;">
+            <button type="button" class="btn  " data-bs-toggle="dropdown">
+              <tr>
+                <td>{{userList.userName}}
+                <img src="data:image/png;base64, {{userList.profilePicture}}" style="width: 45px;height:40px;border-radius: 50px; ">
+               </td>
+               <td>
+                <!-- <h5><b>{{companyUserName}}</b></h5> -->
+              </td>
+              </tr>
+                
+            </button>
+            <ul class="dropdown-menu"> 
+               <!-- <li><a routerLink="../profile" class="dropdown-item" ><i class="fa fa-user1">&nbsp;&nbsp;&nbsp;&nbsp;Profile</i></a></li>
+              
+              <li> <span class="fa-passwd-reset fa-stack">
+                <li>
+               <a data-bs-toggle="modal" data-bs-target="#exampleModal"class="dropdown-item">&nbsp;&nbsp;&nbsp;&nbsp;<b>change password</b></a> 
+          </li> -->
+             <li> 
+              <a  routerLink="/login" class="dropdown-item" ><i class="fa fa-sign-out">&nbsp;&nbsp;&nbsp;&nbsp;Logout</i></a></li> 
+              <!-- <a   class="dropdown-item"><i class="fa fa-sign-out">&nbsp;&nbsp;&nbsp;&nbsp;Logout</i></a></li> -->
+            </ul>
+          </div>
+   
+         
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+  
+                  <form>
+  
+  
+                    <div class="mb-3">
+                      <label class="form-label">Current Password</label>
+                      <input type="text" class="form-control" formControlName="name">
+                    </div>
+  
+                    <div class="mb-3">
+                      <label class="form-label">New Password</label>
+                      <input type="text" class="form-control" formControlName="specialization">
+                    </div>
+  
+                    <div class="mb-3">
+                      <label class="form-label">Confirm Password</label>
+                      <input type="number" class="form-control" formControlName="fees">
+                    </div>
+  
+  
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- -->
+          <!-- <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+            alt="Black and White Portrait of a Man" loading="lazy" /> -->
+          <!--logout button  -->
+          <!-- <button type="button" class="btn btn-primary me-3" routerLink="/public/login">
+            Logout
+          </button> -->
+  
+         <!-- <i class="fas fa-sign-out-alt"  routerLink="/public/login"></i> -->
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  
+  <div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card rounded">
+      <div class=" d-block justify-content-center">
+        <div class="area1 p-3 py-5"> </div>
+        <div class="area2 p- text-center px-3">
+  
+          <div class="image mr-3">
+            <div class="profilepic">
+              <img class="profilepic__image rounded-circle"
+              src="data:image/png;base64, {{userList.profilePicture}}"
+                width="150" height="150" alt="Profibild" />
+              <div class="profilepic__content">
+                <span class="profilepic__icon"><i class="fas fa-camera" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal1"></i></span>
+                <span class="profilepic__text">Edit Profile</span>
+              </div>
+            </div>
+            <!-- modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+  
+                    <form method="post" enctype="multipart/form-data">
+  
+                    
+  
+                      <!-- <label for="formFileLg" class="form-label">image</label> -->
+                      <input class="form-control form-control-lg" name="files" id="files" type="file" (change)="getFile($event)" />
+  
+                      
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="save()">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+            <h4 class=" name mt-3 ">{{userList.userName}}</h4>
+            <img src="data:image/png;base64, {{userList.profilePicture}}">
+            <!-- <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Firstname</label>
+                    <input type="text" class="form-control"  readonly value={{userList.firstName}}> 
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">lastname</label>
+                    <input type="email" class="form-control" readonly value={{userList.lastName}}>
+  
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Username</label>
+                    <input type="text" class="form-control" readonly value={{userList.userName}}>
+                  </div>
+                </div>
+  
+               
+                  <div class="col-md-6">
+                    
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Emailaddress</label>
+                      <input type="text" class="form-control" readonly value={{userList.emailAddress}}>
+    
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Phone</label>
+                      <input type="text" class="form-control" readonly value={{userList.phoneNo}}>
+                    </div>
+                  </div>
+                
+              </div>
+            </form>
+   -->
+  <!-- 2waybinding -->
+  <form action="#" #formdata="ngForm"(ngSubmit)="handleSubmit(formdata)" >
+    <!-- ID:<br /> <input type="text" [(ngModel)]="userList.id" name="id" id="id"><br /><br /> -->
+    FirstName:<br /> <input type="text" [(ngModel)]="userList.firstName"  name="firstName" id="firstttName"><br /><br />
+    lastName:<br /> <input type="text" [(ngModel)]="userList.lastName"  name="lastName" id="lastName"><br /><br />
+    userName:<br /> <input type="text" [(ngModel)]="userList.userName"  name="userName" id="userName"><br /><br />
+    emailAddress:<br /> <input type="text" [(ngModel)]="userList.emailAddress"  name="emailAddress" id="emailAddress"><br /><br />
+    companyName:<br /> <input type="text" [(ngModel)]="userList.companyName"  name="companyName" id="companyName"><br /><br />
+    <!-- role:<br /> <input type="text" [(ngModel)]="userList.role"  name="role" id="role"><br /><br /> -->
+   <button class="btn btn-primary" type="submit" name="submit" >Update</button>
+</form>
+          </div>
+  
+  
+        </div>
+        <div>
+  
+        </div>
+      </div>
+    </div>
